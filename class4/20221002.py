@@ -17,7 +17,7 @@ mylabel.pack(pady=20)
 
 # 建立 Input Entry Boxes
 e = Entry(root)
-#加入視窗中
+# 加入視窗中
 e.pack()
 
 # 點擊按鈕函式 function
