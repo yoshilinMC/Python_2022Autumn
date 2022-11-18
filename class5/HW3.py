@@ -7,7 +7,7 @@ root = Tk()
 root.title("HW5_3")
 
 # 設定視窗座標位置
-root.geometry("300x300")
+root.geometry("250x150")
 
 # Label 標籤
 mylabel = Label(root, text="三人坐沙發 綠色/灰色/黑色")
