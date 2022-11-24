@@ -9,9 +9,9 @@ root.title("class6")
 # 設定視窗座標位置
 root.geometry("300x300")
 
-def Open(): Execute="normal"
+def Open(): 
 def Execute(): pass
-def Close(): Execute="disable"
+def Close(): 
 
 menu = Menu(root)
 menubar2 = Menu(menu, tearoff=0)

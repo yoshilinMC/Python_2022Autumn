@@ -48,7 +48,7 @@ enterbox = Entry(root).grid(row=0,column=1)
 enterbox = Entry(root).grid(row=1,column=1)
 buttom = Button(root, text="Result").grid(row=0,column=2,rowspan=2, sticky=N+S)
 # """
-# """
+"""
 # 建立主選單
 menu = Menu(root)
 # 建立子選單，選單綁定 menubar 主選單(tearoff=0)
@@ -77,21 +77,67 @@ menubar2.add_cascade(label="File", menu=menubar2more)
 menu.add_cascade(label="Test", menu=menubar2)
 # 主視窗加入主選單
 root.config(menu=menu)
-# """
+"""
 
-# def open(): print("open")
-# def save(): print("save")
-# def exit():
+# def open(event): print("open")
+# def save(event): print("save")
+# def exit(event):
 #     print("exit")
 #     root.destroy()
 
+# def open(event=None): 
+#     print("open")
+#     menubar.entryconfig("Save", state="normal")
+# def save(event=None): 
+#     print("save")
+# def exit(event=None):
+#     print("exit")
+#     menubar.entryconfig("Save", state="disabled")
+
 # menu = Menu(root)
 # menubar = Menu(menu, tearoff=0)
-# menubar.add_command(label="Open", command=open)
-# menubar.add_command(label="Save", command=save)
-# menubar.add_command(label="Exit", command=exit)
-# menu.add_cascade(label="File",menu=menubar)
+# menubar.add_command(label="Open", command=open, state="normal")#accelerator="control+o")
+# menubar.add_command(label="Save", command=save, state="disabled")#accelerator="control+s")
+# menubar.add_command(label="Exit", command=exit)#accelerator="control+e")
+# menu.add_cascade(label="File", menu=menubar)
+
+# root.bind_all("<Control-o>", open)
+# root.bind_all("<Control-s>", save)
+# root.bind_all("<Control-e>", exit)
+
 # root.config(menu=menu)
 
+from tkinter import *
+
+# 建立主視窗
+root = Tk()
+
+# 設定視窗標題
+root.title("class7")
+
+# 設定視窗座標位置
+root.geometry("300x300")
+
+def open(event=None): 
+    menubar2.entryconfig("Start", state="normal")
+def start(event=None): 
+    menubar.entryconfig("See", state="normal")
+def end():
+    menubar.entryconfig("See", state="disabled")
+# 建立主選單
+menu = Menu(root)
+# 主選單項目
+menubar = Menu(menu, tearoff=0)
+menubar.add_command(label="Open", command=open, state="normal")
+menubar.add_command(label="See", state="normal")
+menubar.add_command(label="Exit")
+menu.add_cascade(label="First", menu=menubar)
+
+menubar2 = Menu(menu, tearoff=0)
+menubar2.add_command(label="Start", command=start, state="disabled")
+menubar2.add_command(label="End")
+menu.add_cascade(label="Second", menu=menubar2)
+# 主視窗加入主選單
+root.config(menu=menu)
 # 執行主程式
 root.mainloop()
