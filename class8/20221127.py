@@ -1,7 +1,7 @@
 from tkinter import *
 from PIL import Image, ImageTk
 root = Tk()
-root.title("Class7")
+root.title("Class8")
 root.geometry("400x400+150+200")
 counter = 0
 
